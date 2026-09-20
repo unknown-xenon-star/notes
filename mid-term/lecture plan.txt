@@ -1,0 +1,30 @@
+Introduction to Numerical Methods
+1.	Overview of Numerical Analysis
+2.	Types of errors and their  analysis
+3.	Bisection Method and Regula-Falsi Method
+4.	Newton-Raphson Method
+      5.	Fix Point Iteration Method
+6.	Secant Method
+7.	Graeffe’sMethod  and Lin Bairstow
+8-9.	Iterative Method for system of linear equations: Jacobi Iterative Method, Gauss-Seidel Method
+Finite Differences, Interpolationand Extrapolation
+9.	Forward, Backward, Average operator, Shift operator and Central difference operators 
+10.	 Newton’s Forward Interpolation
+11	Newton’s Backward Interpolation
+12-13	Gauss Forward and Gauss Backward Interpolation formula
+13-15.	Stirling’s Formula, Cubic Spline, and Bessel’s Formula
+16	  Newton’s Divided Difference Interpolating Polynomial 
+17	  Lagrange Interpolation Polynomial
+18	Inverse Interpolation:  Lagrange’s Inverse Interpolation
+19	Truncation Error in Polynomial Interpolation
+20	Estimation of Truncation Error in Interpolation
+Numerical Differentiation and Integration, Solution of ODE and PDE
+21.	Numerical differentiation formulas
+22-23.	Newton-Cotes quadrature formulae: Trapezoidal Rule, Simpson 1/3 Rule
+24	Simpson 3/8 Rule, Weddle Rule
+25	Error in Quadrature Formulas – Trapezoidal, Simpson’s 
+26.	Picard’s method, Taylor’s Series (ODE)
+27.	Euler and Euler’s Modified method (ODE)
+28.	Milne Predictor-Corrector Method, Chebyshev Polynomial
+29	Runge- Kutta Method: II & IV order methods for solving ODE
+30	Finite difference methods for PDEs
