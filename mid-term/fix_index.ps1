@@ -1,0 +1,1 @@
+@(Get-Content "E:/mid/mid-term/ANM/00 - Numerical Methods Index.md") | ForEach-Object { $_ -replace "NM --\> PRF\[`"5\. Polynomial Solvers`"\]", "NM --> PRF[`"5. Polynomial Solvers`"]`n    NM --> INT[`"6. Interpolation & Curve Fitting`"]" } | Set-Content "E:/mid/mid-term/ANM/00 - Numerical Methods Index.md"
