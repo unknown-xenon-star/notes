@@ -187,6 +187,7 @@
   },
   "active": "8d168fa96a7b9155",
   "lastOpenFiles": [
+    "fix_index.py",
     "fix_index.ps1",
     "ANM/Concepts/Newton Divided Difference Interpolation.md",
     "ANM/Concepts/Newton Forward and Backward Difference Interpolation.md",
