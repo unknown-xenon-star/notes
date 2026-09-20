@@ -118,4 +118,5 @@ $$|a_{ii}| > \sum_{j=1, j \neq i}^{n} |a_{ij}| \quad \forall i = 1, 2, \dots, n$
 - [[Gauss-Jacobi Method]] | [[Gauss-Seidel Method]]
 - [[Graeffe's Root-Squaring Method]] | [[Lin-Bairstow Method]]
 - [[Lagrange Interpolation]] | [[Lagrange Inverse Interpolation]] | [[Cubic Spline Interpolation]]
+- [[Newton Forward and Backward Difference Interpolation]] | [[Stirling's Formula]] | [[Bessel's Formula]]
 - [[Trapezoidal Rule]] | [[Simpson's 1/3 Rule]] | [[Simpson's 3/8 Rule]] | [[Weddle's Rule]] | [[Error in Quadrature Formulas – Trapezoidal, Simpson's]]

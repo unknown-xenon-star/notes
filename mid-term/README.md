@@ -47,6 +47,8 @@ All notes, concept deep-dives, formula sheets, and PDF course materials for ANM 
   - _[[Lagrange Interpolation]]_ — Basis polynomials, uniqueness theorem, interpolation error
   - _[[Newton Divided Difference Interpolation]]_ — Divided differences, incremental construction
   - _[[Newton Forward and Backward Difference Interpolation]]_ — Equally spaced nodes, $\Delta$/$\nabla$ operators
+  - _[[Stirling's Formula]]_ — Node-centred central differences, symmetric averaging, best mid-table accuracy
+  - _[[Bessel's Formula]]_ — Midpoint-centred central differences for targets between two central nodes
   - _[[Cubic Spline Interpolation]]_ — Piecewise cubics, $C^2$ continuity, Natural/Clamped/Not-a-Knot
 
 ---

@@ -53,6 +53,8 @@ flowchart TD
     INT --> LAGINV["[[Lagrange Inverse Interpolation]]"]
     INT --> NDD["[[Newton Divided Difference Interpolation]]"]
     INT --> NFB["[[Newton Forward and Backward Difference Interpolation]]"]
+    INT --> STF["[[Stirling's Formula]]"]
+    INT --> BSF["[[Bessel's Formula]]"]
     INT --> CSP["[[Cubic Spline Interpolation]]"]
 
     NM --> QUAD["7. Numerical Integration (Quadrature)"]
@@ -101,6 +103,8 @@ flowchart TD
 - **[[Lagrange Inverse Interpolation]]**: Swapping the roles of $x$ and $y$ to recover $x$ from a given $y$, the three-point closed-form root estimate at $y = 0$, and the link to the Secant/Regula-Falsi estimate.
 - **[[Newton Divided Difference Interpolation]]**: Incremental Newton form, divided-difference tables, and top-diagonal coefficients $a_k = f[x_0, x_1, \dots, x_k]$.
 - **[[Newton Forward and Backward Difference Interpolation]]**: Equal-spacing finite differences $\Delta$ / $\nabla$ with binomial-coefficient forms for interpolating at the start or end of a table.
+- **[[Stirling's Formula]]**: Central-difference interpolation anchored on a node — symmetric averaging of forward/backward differences for maximum accuracy in the middle of a table.
+- **[[Bessel's Formula]]**: Midpoint-centred central-difference formula for targets lying between two central nodes, complementing Stirling's formula.
 - **[[Cubic Spline Interpolation]]**: Piecewise cubics with $C^2$ continuity, natural/clamped boundary conditions, and the tridiagonal $M$-system.
 
 ### 7. Numerical Integration (Quadrature)

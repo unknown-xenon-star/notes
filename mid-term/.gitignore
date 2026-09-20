@@ -1,0 +1,20 @@
+# Obsidian local workspace state — machine-specific, rewritten on nearly every
+# pane move, and contains local file paths. Should not be tracked.
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# Obsidian per-vault caches and environment-specific plugin data
+.obsidian/cache/
+.obsidian/plugins/*/data.json
+
+# Superbrain / AI-agent session artifacts
+.superbrain/
+
+# OS and editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+
+# Scratch verification scripts
+_scratch_*.py
