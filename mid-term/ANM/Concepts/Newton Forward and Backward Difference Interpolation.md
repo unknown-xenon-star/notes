@@ -102,6 +102,9 @@ $$\binom{s}{k} = \frac{s(s+1)(s+2)\cdots(s+k-1)}{k!}$$
 | Situation | Recommended Formula |
 | :--- | :--- |
 | Interpolating **near $x_0$** (beginning of table) | **Forward Differences** |
+| Interpolating **near $x_n$** (end of table) | **Backward Differences** |
+| Interpolating **in the middle** | Either works; use Stirling's or Bessel's formula |
+
 ---
 
 ## 6. Worked Step-by-Step Example
@@ -267,5 +270,3 @@ print(f"f(3.5) = {newton_backward_difference(x_points, y_points, 3.5)}")  # 16.7
 - [[Newton Divided Difference Interpolation]] — General case for arbitrary nodes
 - [[Lagrange Interpolation]] — Alternative polynomial interpolation
 - [[Cubic Spline Interpolation]] — Piecewise approach for large datasets
-| Interpolating **near $x_n$** (end of table) | **Backward Differences** |
-| Interpolating **in the middle** | Either works; use Stirling's or Bessel's formula |

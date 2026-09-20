@@ -47,6 +47,13 @@ flowchart TD
     PRF --> GRS["[[Graeffe's Root-Squaring Method]]"]
     PRF --> LBM["[[Lin-Bairstow Method]]"]
 
+    NM --> INT["6. Interpolation & Curve Fitting"]
+
+    INT --> LAG["[[Lagrange Interpolation]]"]
+    INT --> NDD["[[Newton Divided Difference Interpolation]]"]
+    INT --> NFB["[[Newton Forward and Backward Difference Interpolation]]"]
+    INT --> CSP["[[Cubic Spline Interpolation]]"]
+
     NM -.-> FS["[[Numerical Methods Formula Sheet]]"]
 ```
 
@@ -78,6 +85,13 @@ flowchart TD
 *Extracting all roots (real and complex) of $n$-th degree polynomials.*
 - **[[Graeffe's Root-Squaring Method]]**: Direct root separation via successive squarings ($N = 2^m$) without initial guesses, and sign determination with Descartes' Rule.
 - **[[Lin-Bairstow Method]]**: Double synthetic division for quadratic factors $x^2 - rx - s$, $2 \times 2$ Jacobian parameter tuning, and quadratic formula extraction.
+
+### 6. Interpolation & Curve Fitting
+*Constructing polynomials that pass exactly through discrete data points.*
+- **[[Lagrange Interpolation]]**: Basis-polynomial construction of the unique interpolant, the error remainder term $\frac{f^{(n+1)}(\xi)}{(n+1)!} \prod (x - x_i)$, and Runge's Phenomenon.
+- **[[Newton Divided Difference Interpolation]]**: Incremental Newton form, divided-difference tables, and top-diagonal coefficients $a_k = f[x_0, x_1, \dots, x_k]$.
+- **[[Newton Forward and Backward Difference Interpolation]]**: Equal-spacing finite differences $\Delta$ / $\nabla$ with binomial-coefficient forms for interpolating at the start or end of a table.
+- **[[Cubic Spline Interpolation]]**: Piecewise cubics with $C^2$ continuity, natural/clamped boundary conditions, and the tridiagonal $M$-system.
 
 ---
 

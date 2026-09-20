@@ -58,6 +58,23 @@ The interpolating polynomial is the **weighted sum** of all basis polynomials, e
 > $$P_n(x) = \sum_{j=0}^{n} y_j \, L_j(x) = \sum_{j=0}^{n} y_j \prod_{\substack{k=0 \\ k \neq j}}^{n} \frac{x - x_k}{x_j - x_k}$$
 
 **Geometric Interpretation**: Each basis polynomial $L_j(x)$ acts like a "selector" — at $x = x_j$ it picks out $y_j$, and at every other data point it contributes nothing. Summing them all constructs the exact interpolant.
+
+---
+
+## 4. Special Cases: Linear & Quadratic Interpolation
+
+### Linear Interpolation ($n = 1$, 2 data points)
+Given $(x_0, y_0)$ and $(x_1, y_1)$:
+
+$$P_1(x) = y_0 \cdot \frac{x - x_1}{x_0 - x_1} + y_1 \cdot \frac{x - x_0}{x_1 - x_0}$$
+
+> [!TIP] 💡 This is just the standard **two-point linear interpolation formula** from algebra!
+
+### Quadratic Interpolation ($n = 2$, 3 data points)
+Given $(x_0, y_0), (x_1, y_1), (x_2, y_2)$:
+
+$$P_2(x) = y_0 \cdot \frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)} + y_1 \cdot \frac{(x-x_0)(x-x_2)}{(x_1-x_0)(x_1-x_2)} + y_2 \cdot \frac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2-x_1)}$$
+
 ---
 
 ## 5. Error Analysis & Remainder Term
@@ -124,19 +141,6 @@ $$f(2) \approx P_2(2) = 2 + 1 = \mathbf{3}$$
 
 > [!WARNING] ⚠️ Runge's Phenomenon
 > Increasing $n$ (adding more nodes) does **NOT** always improve accuracy! For equidistant nodes, high-degree Lagrange interpolation can oscillate wildly near the endpoints of the interval — this is called **Runge's Phenomenon**. Using **Chebyshev nodes** or **piecewise polynomials** (splines) avoids this issue.
-Given $(x_0, y_0)$ and $(x_1, y_1)$:
-
-$$P_1(x) = y_0 \cdot \frac{x - x_1}{x_0 - x_1} + y_1 \cdot \frac{x - x_0}{x_1 - x_0}$$
-
-> [!TIP] 💡 This is just the standard **two-point linear interpolation formula** from algebra!
-
-### Quadratic Interpolation ($n = 2$, 3 data points)
-Given $(x_0, y_0), (x_1, y_1), (x_2, y_2)$:
-
-$$P_2(x) = y_0 \cdot \frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)} + y_1 \cdot \frac{(x-x_0)(x-x_2)}{(x_1-x_0)(x_1-x_2)} + y_2 \cdot \frac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2-x_1)}$$
----
-
-## 2. Construction of Lagrange Basis Polynomials
 
 ---
 
@@ -208,15 +212,3 @@ print(f"P_2(2) = {lagrange_interpolation(x_points, y_points, 2)}")  # Output: 3.
 - [[Newton Forward and Backward Difference Interpolation]] — Special case for equally spaced nodes
 - [[Errors and Convergence]] — Interpolation error analysis and Runge's phenomenon
 - [[Cubic Spline Interpolation]] — Piecewise approach avoiding Runge's phenomenon
-The key idea is to construct $n+1$ **basis polynomials** $L_0(x), L_1(x), \dots, L_n(x)$, each of degree $n$, with the special property:
-
-$$L_j(x_i) = \begin{cases} 1 & \text{if } i = j \\ 0 & \text{if } i \neq j \end{cases}$$
-
-Each basis polynomial $L_j(x)$ is constructed by taking the product of terms that are zero at every data point **except** $x_j$:
-
-> [!IMPORTANT] 🎯 Lagrange Basis Polynomial Formula
-> $$L_j(x) = \prod_{\substack{k=0 \\ k \neq j}}^{n} \frac{x - x_k}{x_j - x_k}$$
-
-**Why this works**:
-- When $x = x_j$: every numerator term is $(x_j - x_k) \neq 0$, giving $L_j(x_j) = \prod_{k \neq j} 1 = 1$ ✅
-- When $x = x_i$ (where $i \neq j$): one numerator factor is $(x_i - x_i) = 0$, making $L_j(x_i) = 0$ ✅

@@ -60,6 +60,25 @@ $$f[x_i, x_{i+1}, x_{i+2}] = \frac{f[x_{i+1}, x_{i+2}] - f[x_i, x_{i+1}]}{x_{i+2
 
 ---
 
+## 3. The Divided Difference Table
+
+The most efficient way to organize the computation is a **divided difference table**:
+
+| $x_i$ | $y_i$ | $f[.,.]$ | $f[.,.,.]$ | $f[.,.,.,.]$ |
+| :---: | :---: | :---: | :---: | :---: |
+| $x_0$ | $y_0$ | | | |
+| | | $f[x_0,x_1]$ | | |
+| $x_1$ | $y_1$ | | $f[x_0,x_1,x_2]$ | |
+| | | $f[x_1,x_2]$ | | $f[x_0,x_1,x_2,x_3]$ |
+| $x_2$ | $y_2$ | | $f[x_1,x_2,x_3]$ | |
+| | | $f[x_2,x_3]$ | | |
+| $x_3$ | $y_3$ | | | |
+
+**Reading the table**: The coefficients $a_0, a_1, \dots, a_n$ are the **top diagonal** of the table:
+$$a_0 = f[x_0], \quad a_1 = f[x_0,x_1], \quad a_2 = f[x_0,x_1,x_2], \quad \dots, \quad a_n = f[x_0,x_1,\dots,x_n]$$
+
+> [!TIP] 💡 The coefficients are the **top-left to top-right diagonal** of the table!
+
 ---
 
 ## 4. Derivation of the Newton Form
@@ -229,21 +248,3 @@ print(f"P_3(4) = {newton_divided_difference(x_points, y_points, 4)}")  # 11.0 (e
 - [[Lagrange Interpolation]] — Basis polynomial approach (equivalent result)
 - [[Newton Forward and Backward Difference Interpolation]] — Simplified for equally spaced nodes
 - [[Cubic Spline Interpolation]] — Piecewise alternative avoiding Runge's phenomenon
-## 3. The Divided Difference Table
-
-The most efficient way to organize the computation is a **divided difference table**:
-
-| $x_i$ | $y_i$ | $f[.,.]$ | $f[.,.,.]$ | $f[.,.,.,.]$ |
-| :---: | :---: | :---: | :---: | :---: |
-| $x_0$ | $y_0$ | | | |
-| | | $f[x_0,x_1]$ | | |
-| $x_1$ | $y_1$ | | $f[x_0,x_1,x_2]$ | |
-| | | $f[x_1,x_2]$ | | $f[x_0,x_1,x_2,x_3]$ |
-| $x_2$ | $y_2$ | | $f[x_1,x_2,x_3]$ | |
-| | | $f[x_2,x_3]$ | | |
-| $x_3$ | $y_3$ | | | |
-
-**Reading the table**: The coefficients $a_0, a_1, \dots, a_n$ are the **top diagonal** of the table:
-$$a_0 = f[x_0], \quad a_1 = f[x_0,x_1], \quad a_2 = f[x_0,x_1,x_2], \quad \dots, \quad a_n = f[x_0,x_1,\dots,x_n]$$
-
-> [!TIP] 💡 The coefficients are the **top-left to top-right diagonal** of the table!

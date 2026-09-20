@@ -40,6 +40,15 @@ This file tracks all changes made to the Mid-Term Knowledge Vault (ANM). It serv
 - Configured Obsidian vault settings (PDF export, appearance, plugins, graph)
 - Verified all files are properly linked and indexed
 
+### v1.3 - Interpolation Cleanup & Index Update (2026-09-20)
+- Repaired structural duplication in the interpolation notes:
+  - Lagrange Interpolation: restored the misplaced "Special Cases (Linear & Quadratic)" section as Section 4, removed the empty duplicate "## 2" heading and the duplicated basis-polynomial block at the end of the file, fixed section numbering (1-7).
+  - Newton Divided Difference: moved "The Divided Difference Table" (Section 3) back between Sections 2 and 4, removed the duplicate block after Related Notes.
+  - Newton Forward/Backward: restored the two missing rows of the "When to Use Which?" table that had been split off to the end of the file.
+- Added Module 6 "Interpolation & Curve Fitting" to the ANM Mermaid knowledge graph and syllabus in `ANM/00 - Numerical Methods Index.md` (now links all 4 interpolation notes).
+- Removed stale one-off scripts `fix_index.py` / `fix_index.ps1` (hardcoded `E:/` Windows paths; their intended index fix is now applied directly).
+- Fixed "How to Resume" to reference the actual index file location.
+
 ## Change Log
 
 | Version | Date | Author | Changes | Status |
@@ -47,6 +56,7 @@ This file tracks all changes made to the Mid-Term Knowledge Vault (ANM). It serv
 | v1.0 | 2026-09-19 | User | Initial setup - created vault structure, README, ANM notes, Obsidian config | Completed |
 | v1.1 | 2026-09-19 | User | Completed all 15 ANM concept notes, formula sheet, practice templates | Completed |
 | v1.2 | 2026-09-19 | User | Added midterm-prep and obsidian-vault skills, configured Obsidian settings | Completed |
+| v1.3 | 2026-09-20 | User | Fixed interpolation note structure, added Interpolation module (6) to ANM index, removed stale fix_index scripts | Completed |
 
 ## Recent Activity
 
@@ -63,15 +73,18 @@ This file tracks all changes made to the Mid-Term Knowledge Vault (ANM). It serv
 - Created high-yield formula cheat sheet
 - Established active recall question formats
 
+### 2026-09-20
+- Repaired duplicated/misplaced sections in the three interpolation notes
+- Added Interpolation & Curve Fitting (Module 6) to the ANM index and Mermaid graph
+- Removed obsolete `fix_index.py` / `fix_index.ps1` scripts
+
 ## File Status
 
 | File | Status | Last Modified |
 |------|--------|---------------|
 | README.md | ✅ Active | 2026-09-19 |
 | ANM/00 - Numerical Methods Index.md | ✅ Active | 2026-09-19 |
-| ANM/Concepts/*.md | ✅ Active | 2026-09-19 |
-| ANM/*.md (interpolation, methods) | ✅ Active | 2026-09-19 |
-| ANM/*.py (scripts) | ✅ Active | 2026-09-19 |
+| ANM/Concepts/*.md | ✅ Active | 2026-09-20 |
 | .obsidian/*.json | ✅ Active | 2026-09-19 |
 | .obsidian/workspace.json | ✅ Active | 2026-09-19 |
 | .obsidian/app.json | ✅ Active | 2026-09-19 |
@@ -86,7 +99,7 @@ If this vault is moved to another AI or shared with others:
 1. Load `changes_ongoing.md` to see the complete history
 2. Navigate to `ANM/` folder for all concept notes
 3. Use `README.md` for overall project overview
-4. Refer to `index.md` for the knowledge map
+4. Refer to `ANM/00 - Numerical Methods Index.md` for the knowledge map
 5. All files are properly linked and ready to use
 
 ## Future Improvements
@@ -99,5 +112,5 @@ If this vault is moved to another AI or shared with others:
 
 ---
 *Generated on 2026-09-19*
-*Last updated: 2026-09-19*
-*Version: v1.2*
+*Last updated: 2026-09-20*
+*Version: v1.3*
