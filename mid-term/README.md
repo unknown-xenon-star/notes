@@ -20,18 +20,34 @@ All notes, concept deep-dives, formula sheets, and PDF course materials for ANM 
 
 - 🏠 **[[00 - Numerical Methods Index|ANM Master Study Hub & MOC]]** — Full syllabus roadmap, concept graph, and module overview.
 - ⚡ **[[Numerical Methods Formula Sheet|ANM High-Yield Formula Cheat Sheet]]** — Complete formula summary, convergence orders, and SDD criteria.
-- 🧠 **ANM Concept Notes (`ANM/Concepts/`):**
-  - [[Roots of Equations]] — Geometrical roots, algebraic vs transcendental, IVT.
-  - [[Errors and Convergence]] — Absolute/relative/approximate errors, Scarborough rule.
-  - [[Bisection Method]] — Interval halving, convergence analysis, iteration bound.
-  - [[Regula Falsi Method]] — False position, stagnant endpoint, Illinois algorithm.
-  - [[Fixed-Point Iteration]] — $x = g(x)$, Lipschitz condition $|g'(x)| < 1$, Aitken $\Delta^2$.
-  - [[Newton-Raphson Method]] — Tangent iteration, quadratic convergence, square roots.
-  - [[Secant Method]] — Finite-difference slope, superlinear convergence ($p \approx 1.618$).
-  - [[Gauss-Jacobi Method]] — Simultaneous displacement, iteration matrix $T_J$, SDD condition.
-  - [[Gauss-Seidel Method]] — Successive displacement, iteration matrix $T_{GS}$, $2\times$ acceleration.
-  - [[Graeffe's Root-Squaring Method]] — Polynomial root separation via squarings.
-  - [[Lin-Bairstow Method]] — Double synthetic division, quadratic factor extraction.
+- 🧠 **ANM Concept Notes (`ANM/Concepts/`)** — 15 concept notes organized by category:
+
+  #### 📌 Foundational Concepts
+  - _[[Roots of Equations]]_ — Geometric roots, algebraic vs transcendental, IVT, multiplicity
+  - _[[Errors and Convergence]]_ — Absolute/relative/approximate errors, Scarborough rule, convergence orders
+
+  #### 📌 Bracketing (Closed) Methods
+  - _[[Bisection Method]]_ — Interval halving, linear convergence ($p=1$), iteration bound
+  - _[[Regula Falsi Method]]_ — False position, stagnant endpoint trap, Illinois algorithm
+
+  #### 📌 Open Methods (Single Equation)
+  - _[[Fixed-Point Iteration]]_ — $x = g(x)$, Lipschitz condition $|g'(x)| < 1$, Aitken $\Delta^2$
+  - _[[Newton-Raphson Method]]_ — Tangent iteration, quadratic convergence ($p=2$), square roots
+  - _[[Secant Method]]_ — Finite-difference slope, superlinear convergence ($p \approx 1.618$)
+
+  #### 📌 Iterative Linear Systems ($A\mathbf{x} = \mathbf{b}$)
+  - _[[Gauss-Jacobi Method]]_ — Simultaneous displacement, iteration matrix $T_J$, SDD condition
+  - _[[Gauss-Seidel Method]]_ — Successive displacement, iteration matrix $T_{GS}$, $2\times$ acceleration
+
+  #### 📌 Polynomial Solvers
+  - _[[Graeffe's Root-Squaring Method]]_ — Polynomial root separation via squarings, Descartes' Rule
+  - _[[Lin-Bairstow Method]]_ — Double synthetic division, quadratic factor extraction
+
+  #### 📌 Interpolation Methods
+  - _[[Lagrange Interpolation]]_ — Basis polynomials, uniqueness theorem, interpolation error
+  - _[[Newton Divided Difference Interpolation]]_ — Divided differences, incremental construction
+  - _[[Newton Forward and Backward Difference Interpolation]]_ — Equally spaced nodes, $\Delta$/$\nabla$ operators
+  - _[[Cubic Spline Interpolation]]_ — Piecewise cubics, $C^2$ continuity, Natural/Clamped/Not-a-Knot
 
 ---
 

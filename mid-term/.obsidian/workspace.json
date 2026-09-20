@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ANM/Concepts/Graeffe's Root-Squaring Method.md",
+                "file": "README.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Graeffe's Root-Squaring Method"
+              "title": "README"
             }
           }
         ]
@@ -99,6 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -166,6 +167,18 @@
               "icon": "lucide-list",
               "title": "Outline"
             }
+          },
+          {
+            "id": "5dff86d2b327efe6",
+            "type": "leaf",
+            "state": {
+              "type": "file-properties",
+              "state": {
+                "file": "README.md"
+              },
+              "icon": "lucide-info",
+              "title": "File properties"
+            }
           }
         ]
       }
@@ -187,8 +200,10 @@
   },
   "active": "8d168fa96a7b9155",
   "lastOpenFiles": [
-    "changes_ongoing.md",
+    "ANM/Concepts/Lin-Bairstow Method.md",
     "ANM/00 - Numerical Methods Index.md",
+    "ANM/Concepts/Graeffe's Root-Squaring Method.md",
+    "changes_ongoing.md",
     "ANM/Concepts/Gauss-Seidel Method.md",
     "ANM/Concepts/Gauss-Jacobi Method.md",
     "ANM/Concepts/Secant Method.md",
@@ -200,7 +215,6 @@
     "ANM/Concepts/Newton Divided Difference Interpolation.md",
     "ANM/Concepts/Newton Forward and Backward Difference Interpolation.md",
     "ANM/Concepts/Bisection Method.md",
-    "ANM/Concepts/Lin-Bairstow Method.md",
     "ANM/Concepts/Cubic Spline Interpolation.md",
     "ANM/Concepts/Lagrange Interpolation.md",
     "ANM/Errors and Convergence.pdf",
@@ -210,7 +224,6 @@
     "Concepts/Roots of Equations.md",
     "ANM/Summaries/Numerical Methods Formula Sheet.md",
     "ANM/Summaries",
-    "ANM/Concepts/Graeffe's Root-Squaring Method.md",
     "ANM/Concepts",
     "ANM",
     "00 - Numerical Methods Index.md",
