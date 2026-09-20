@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ANM/Concepts/Regula Falsi Method.md",
-                "mode": "source",
+                "file": "ANM/Concepts/Graeffe's Root-Squaring Method.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Regula Falsi Method"
+              "title": "Graeffe's Root-Squaring Method"
             }
           }
         ]
@@ -187,15 +187,20 @@
   },
   "active": "8d168fa96a7b9155",
   "lastOpenFiles": [
+    "changes_ongoing.md",
+    "ANM/00 - Numerical Methods Index.md",
+    "ANM/Concepts/Gauss-Seidel Method.md",
+    "ANM/Concepts/Gauss-Jacobi Method.md",
+    "ANM/Concepts/Secant Method.md",
+    "ANM/Concepts/Newton-Raphson Method.md",
+    "ANM/Concepts/Fixed-Point Iteration.md",
+    "ANM/Concepts/Regula Falsi Method.md",
     "fix_index.py",
     "fix_index.ps1",
     "ANM/Concepts/Newton Divided Difference Interpolation.md",
     "ANM/Concepts/Newton Forward and Backward Difference Interpolation.md",
     "ANM/Concepts/Bisection Method.md",
-    "ANM/Concepts/Regula Falsi Method.md",
-    "ANM/00 - Numerical Methods Index.md",
     "ANM/Concepts/Lin-Bairstow Method.md",
-    "ANM/Concepts/Newton-Raphson Method.md",
     "ANM/Concepts/Cubic Spline Interpolation.md",
     "ANM/Concepts/Lagrange Interpolation.md",
     "ANM/Errors and Convergence.pdf",
@@ -205,11 +210,7 @@
     "Concepts/Roots of Equations.md",
     "ANM/Summaries/Numerical Methods Formula Sheet.md",
     "ANM/Summaries",
-    "ANM/Concepts/Secant Method.md",
     "ANM/Concepts/Graeffe's Root-Squaring Method.md",
-    "ANM/Concepts/Fixed-Point Iteration.md",
-    "ANM/Concepts/Gauss-Seidel Method.md",
-    "ANM/Concepts/Gauss-Jacobi Method.md",
     "ANM/Concepts",
     "ANM",
     "00 - Numerical Methods Index.md",
