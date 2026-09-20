@@ -50,9 +50,18 @@ flowchart TD
     NM --> INT["6. Interpolation & Curve Fitting"]
 
     INT --> LAG["[[Lagrange Interpolation]]"]
+    INT --> LAGINV["[[Lagrange Inverse Interpolation]]"]
     INT --> NDD["[[Newton Divided Difference Interpolation]]"]
     INT --> NFB["[[Newton Forward and Backward Difference Interpolation]]"]
     INT --> CSP["[[Cubic Spline Interpolation]]"]
+
+    NM --> QUAD["7. Numerical Integration (Quadrature)"]
+
+    QUAD --> TRP["[[Trapezoidal Rule]]"]
+    QUAD --> S13["[[Simpson's 1/3 Rule]]"]
+    QUAD --> S38["[[Simpson's 3/8 Rule]]"]
+    QUAD --> WDL["[[Weddle's Rule]]"]
+    QUAD --> QER["[[Error in Quadrature Formulas – Trapezoidal, Simpson's]]"]
 
     NM -.-> FS["[[Numerical Methods Formula Sheet]]"]
 ```
@@ -89,9 +98,18 @@ flowchart TD
 ### 6. Interpolation & Curve Fitting
 *Constructing polynomials that pass exactly through discrete data points.*
 - **[[Lagrange Interpolation]]**: Basis-polynomial construction of the unique interpolant, the error remainder term $\frac{f^{(n+1)}(\xi)}{(n+1)!} \prod (x - x_i)$, and Runge's Phenomenon.
+- **[[Lagrange Inverse Interpolation]]**: Swapping the roles of $x$ and $y$ to recover $x$ from a given $y$, the three-point closed-form root estimate at $y = 0$, and the link to the Secant/Regula-Falsi estimate.
 - **[[Newton Divided Difference Interpolation]]**: Incremental Newton form, divided-difference tables, and top-diagonal coefficients $a_k = f[x_0, x_1, \dots, x_k]$.
 - **[[Newton Forward and Backward Difference Interpolation]]**: Equal-spacing finite differences $\Delta$ / $\nabla$ with binomial-coefficient forms for interpolating at the start or end of a table.
 - **[[Cubic Spline Interpolation]]**: Piecewise cubics with $C^2$ continuity, natural/clamped boundary conditions, and the tridiagonal $M$-system.
+
+### 7. Numerical Integration (Quadrature)
+*Approximating $\int_a^b f(x)\,dx$ from equally spaced ordinates — the accuracy ladder from $O(h^2)$ to $O(h^6)$.*
+- **[[Trapezoidal Rule]]**: Chord-top trapeziums, the "ends once, middles twice" weight scheme, exact for linear functions, and composite error $-\frac{(b-a)h^2}{12}f''(\xi)$.
+- **[[Simpson's 1/3 Rule]]**: Parabolic panels (even $n$ required), the 1–4–2–4–…–4–1 weight pattern, exact for cubics, and composite error $-\frac{(b-a)h^4}{180}f^{(4)}(\xi)$.
+- **[[Simpson's 3/8 Rule]]**: Cubic panels ($n$ a multiple of 3), the 1–3–3–1 binomial weights, and hybrid strategies for odd strip counts.
+- **[[Weddle's Rule]]**: Sixth-difference panels ($n$ a multiple of 6) with the 1–5–1–6–1–5–1 pattern, exact for degree 5, and error $O(h^6)$.
+- **[[Error in Quadrature Formulas – Trapezoidal, Simpson's]]**: Single-panel and composite error terms for every rule, the strip-doubling shrinkage law, and choosing $n$ for a target tolerance.
 
 ---
 

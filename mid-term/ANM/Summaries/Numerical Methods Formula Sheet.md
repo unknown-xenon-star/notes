@@ -79,7 +79,24 @@ $$|a_{ii}| > \sum_{j=1, j \neq i}^{n} |a_{ij}| \quad \forall i = 1, 2, \dots, n$
 
 ---
 
-## 🎯 5. Error & Stopping Criteria Quick Reference
+## 🎯 5. Numerical Integration (Quadrature)
+
+| Rule | Composite Formula | Strips $n$ | Composite Error | Precision |
+| :--- | :--- | :---: | :--- | :---: |
+| **[[Trapezoidal Rule]]** | $\frac{h}{2}\big[y_0 + 2(y_1+\dots+y_{n-1}) + y_n\big]$ | any | $-\frac{(b-a)h^2}{12}f''(\xi)$ | 1 |
+| **[[Simpson's 1/3 Rule]]** | $\frac{h}{3}\big[(y_0+y_n) + 4\Sigma y_{\text{odd}} + 2\Sigma y_{\text{even}}\big]$ | even | $-\frac{(b-a)h^4}{180}f^{(4)}(\xi)$ | 3 |
+| **[[Simpson's 3/8 Rule]]** | $\frac{3h}{8}\big[(y_0+y_n) + 3\Sigma y_{\text{non-boundary}} + 2\Sigma y_{3,6,\dots}\big]$ | $\equiv 0 \pmod 3$ | $-\frac{(b-a)h^4}{80}f^{(4)}(\xi)$ | 3 |
+| **[[Weddle's Rule]]** | $\frac{3h}{10}\big[y_0+5y_1+y_2+6y_3+y_4+5y_5+y_6\big]$ per panel | $\equiv 0 \pmod 6$ | $-\frac{(b-a)h^6}{840}f^{(6)}(\xi)$ | 5 |
+
+> [!TIP] 💡 Quadrature Exam Takeaways
+> - Strip-doubling shrinkage: error ÷ **4** (Trapezoidal), ÷ **16** (Simpson), ÷ **64** (Weddle).
+> - $n$ compatibility cheatsheet: $n = 12$ → all rules apply; $n = 7$ → Simpson 1/3 on 4 strips + Simpson 3/8 on 3 strips.
+> - Romberg idea: $\frac{4I_{h/2} - I_h}{3}$ cancels the trapezoidal $h^2$ error (→ Simpson accuracy).
+> - **[[Lagrange Inverse Interpolation]]** (companion topic): to find $x$ given $y$, swap variables — $x = \sum_j x_j \prod_{k \neq j} \frac{y - y_k}{y_j - y_k}$; at $y = 0$ it is a one-shot root finder reducing to the secant formula for two points.
+
+---
+
+## 🎯 6. Error & Stopping Criteria Quick Reference
 
 | Measure | Mathematical Formula | Purpose / Meaning |
 | :--- | :--- | :--- |
@@ -100,3 +117,5 @@ $$|a_{ii}| > \sum_{j=1, j \neq i}^{n} |a_{ij}| \quad \forall i = 1, 2, \dots, n$
 - [[Fixed-Point Iteration]] | [[Newton-Raphson Method]] | [[Secant Method]]
 - [[Gauss-Jacobi Method]] | [[Gauss-Seidel Method]]
 - [[Graeffe's Root-Squaring Method]] | [[Lin-Bairstow Method]]
+- [[Lagrange Interpolation]] | [[Lagrange Inverse Interpolation]] | [[Cubic Spline Interpolation]]
+- [[Trapezoidal Rule]] | [[Simpson's 1/3 Rule]] | [[Simpson's 3/8 Rule]] | [[Weddle's Rule]] | [[Error in Quadrature Formulas – Trapezoidal, Simpson's]]

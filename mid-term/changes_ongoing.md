@@ -49,6 +49,18 @@ This file tracks all changes made to the Mid-Term Knowledge Vault (ANM). It serv
 - Removed stale one-off scripts `fix_index.py` / `fix_index.ps1` (hardcoded `E:/` Windows paths; their intended index fix is now applied directly).
 - Fixed "How to Resume" to reference the actual index file location.
 
+### v1.4 - Integration (Quadrature) Module (2026-09-20)
+- Added 6 new concept notes in `ANM/Concepts/`:
+  - Lagrange Inverse Interpolation (swapped-variable formula, three-point root estimate, secant connection)
+  - Trapezoidal Rule (composite scheme, geometric bias, worked example on 1/(1+x²), n=6)
+  - Simpson's 1/3 Rule (parabolic panels, 1-4-2 weight pattern, exact-for-cubics proof, n=6 example)
+  - Simpson's 3/8 Rule (cubic panels, 1-3-3-1 weights, single + composite examples, hybrid strategies)
+  - Weddle's Rule (6th-difference rule, 41/140 → 3/10 swap, 1-5-1-6-1-5-1 pattern, examples vs Simpson)
+  - Error in Quadrature Formulas – Trapezoidal, Simpson's (single-panel + composite error terms, strip-doubling law, tolerance-driven n, Richardson/Romberg)
+- All worked-example numbers verified computationally (quadrature results vs π/4, ln 4, ln 7; root estimates vs bisection).
+- Updated `ANM/00 - Numerical Methods Index.md`: added Module 7 "Numerical Integration (Quadrature)" to Mermaid graph + syllabus, linked Lagrange Inverse Interpolation under Module 6.
+- Updated `ANM/Summaries/Numerical Methods Formula Sheet.md`: added Section 5 "Numerical Integration (Quadrature)" comparison table, renumbered error section, extended quick links.
+
 ## Change Log
 
 | Version | Date | Author | Changes | Status |
@@ -57,6 +69,7 @@ This file tracks all changes made to the Mid-Term Knowledge Vault (ANM). It serv
 | v1.1 | 2026-09-19 | User | Completed all 15 ANM concept notes, formula sheet, practice templates | Completed |
 | v1.2 | 2026-09-19 | User | Added midterm-prep and obsidian-vault skills, configured Obsidian settings | Completed |
 | v1.3 | 2026-09-20 | User | Fixed interpolation note structure, added Interpolation module (6) to ANM index, removed stale fix_index scripts | Completed |
+| v1.4 | 2026-09-20 | AI (Codebuff) | Added 6 integration/quadrature notes (Lagrange inverse interpolation, Trapezoidal, Simpson 1/3 & 3/8, Weddle, quadrature errors), updated index + formula sheet | Completed |
 
 ## Recent Activity
 
@@ -77,6 +90,8 @@ This file tracks all changes made to the Mid-Term Knowledge Vault (ANM). It serv
 - Repaired duplicated/misplaced sections in the three interpolation notes
 - Added Interpolation & Curve Fitting (Module 6) to the ANM index and Mermaid graph
 - Removed obsolete `fix_index.py` / `fix_index.ps1` scripts
+- Added Lagrange Inverse Interpolation note and 5 numerical-integration notes (Module 7)
+- Verified all worked examples numerically; updated formula sheet with quadrature tables
 
 ## File Status
 
@@ -113,4 +128,4 @@ If this vault is moved to another AI or shared with others:
 ---
 *Generated on 2026-09-19*
 *Last updated: 2026-09-20*
-*Version: v1.3*
+*Version: v1.4*
