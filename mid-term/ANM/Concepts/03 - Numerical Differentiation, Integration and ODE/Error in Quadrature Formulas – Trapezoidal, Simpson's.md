@@ -43,8 +43,8 @@ Integrating this remainder over the panel gives the quadrature error. For the cl
 > | Rule | Panel | Error $E$ (single application) | Sign structure |
 > | :--- | :---: | :--- | :--- |
 > | **[[Trapezoidal Rule]]** | $[x_0, x_1]$, width $h$ | $$E_T = -\frac{h^3}{12} f''(\xi)$$ | $\propto f''$ |
-> | **[[Simpson's 1/3 Rule]]** | $[x_0, x_2]$, width $2h$ | $$E_{1/3} = -\frac{h^5}{90} f^{(4)}(\xi)$$ | $\propto f^{(4)}$ |
-> | **[[Simpson's 3/8 Rule]]** | $[x_0, x_3]$, width $3h$ | $$E_{3/8} = -\frac{3h^5}{80} f^{(4)}(\xi)$$ | $\propto f^{(4)}$ |
+> | **[[Simpson's One-Third Rule]]** | $[x_0, x_2]$, width $2h$ | $$E_{1/3} = -\frac{h^5}{90} f^{(4)}(\xi)$$ | $\propto f^{(4)}$ |
+> | **[[Simpson's Three-Eighths Rule]]** | $[x_0, x_3]$, width $3h$ | $$E_{3/8} = -\frac{3h^5}{80} f^{(4)}(\xi)$$ | $\propto f^{(4)}$ |
 > | **[[Weddle's Rule]]** | $[x_0, x_6]$, width $6h$ | $$E_W = -\frac{h^7}{140} f^{(6)}(\xi)$$ | $\propto f^{(6)}$ |
 >
 > In all cases $\xi$ lies inside the panel; the minus signs indicate the rule **over-estimates** when the leading derivative is positive.
@@ -215,8 +215,8 @@ print(f"Actual error: 0.00116")           # from the Trapezoidal Rule worked exa
 
 ## 🔗 Related Notes
 - [[Trapezoidal Rule]] — The $O(h^2)$ baseline and its geometric bias
-- [[Simpson's 1/3 Rule]] — Derivation and the free-cubic-precision bonus
-- [[Simpson's 3/8 Rule]] — Cubic panels and hybrid strategies
+- [[Simpson's One-Third Rule]] — Derivation and the free-cubic-precision bonus
+- [[Simpson's Three-Eighths Rule]] — Cubic panels and hybrid strategies
 - [[Weddle's Rule]] — The $O(h^6)$ sixth-difference rule
 - [[Errors and Convergence]] — General error quantification ($E_a$, $E_r$, orders)
 - [[Lagrange Interpolation]] — The remainder term all of this grows from

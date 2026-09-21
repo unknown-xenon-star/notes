@@ -61,6 +61,24 @@ This file tracks all changes made to the Mid-Term Knowledge Vault (ANM). It serv
 - Updated `ANM/00 - Numerical Methods Index.md`: added Module 7 "Numerical Integration (Quadrature)" to Mermaid graph + syllabus, linked Lagrange Inverse Interpolation under Module 6.
 - Updated `ANM/Summaries/Numerical Methods Formula Sheet.md`: added Section 5 "Numerical Integration (Quadrature)" comparison table, renumbered error section, extended quick links.
 
+### v1.5 - DSA Subject Module (2026-09-21)
+- Created new subject folder `DSA/` with `Concepts/` subfolder, mirroring the ANM structure.
+- Added 4 concept notes in `DSA/Concepts/`:
+  - Asymptotic Analysis (Big-O/Ω/Θ, complexity ladder, loop analysis, space complexity)
+  - Arrays (address arithmetic base+i×w, row-major 2D, shifting tax, dynamic doubling)
+  - Linked List (singly, doubly, circular; reversal; array-vs-list trade-offs)
+  - Stack (LIFO, array/linked implementations, postfix evaluation, balanced parentheses)
+- Created master index `DSA/00 - Data Structures and Algorithms Index.md` with Mermaid knowledge graph + syllabus modules.
+- Updated `README.md` to register DSA as subject module 2.
+
+### v1.6 - Simpson Filename & Wikilink Repair (2026-09-21)
+- Renamed two notes whose filenames contained `/` (an illegal path character, which made every wikilink pointing at them dead):
+  - `Simpson's 1-3 Rule.md` → `Simpson's One-Third Rule.md`
+  - `Simpson's 3-8 Rule.md` → `Simpson's Three-Eighths Rule.md`
+- Converted all 33 `[[Simpson's 1/3 Rule]]` / `[[Simpson's 3/8 Rule]]` wikilink instances across 8 files (including Mermaid graph links) to the new legal filenames; titles and frontmatter untouched.
+- Added `"Simpson's 1/3 Rule"` / `"Simpson's 3/8 Rule"` frontmatter aliases so legacy spellings still resolve in Obsidian's quick switcher.
+- Verified integrity: all other tracked markdown files byte-identical to git; zero residual old-style links.
+
 ## Change Log
 
 | Version | Date | Author | Changes | Status |
@@ -70,6 +88,8 @@ This file tracks all changes made to the Mid-Term Knowledge Vault (ANM). It serv
 | v1.2 | 2026-09-19 | User | Added midterm-prep and obsidian-vault skills, configured Obsidian settings | Completed |
 | v1.3 | 2026-09-20 | User | Fixed interpolation note structure, added Interpolation module (6) to ANM index, removed stale fix_index scripts | Completed |
 | v1.4 | 2026-09-20 | AI (Codebuff) | Added 6 integration/quadrature notes (Lagrange inverse interpolation, Trapezoidal, Simpson 1/3 & 3/8, Weddle, quadrature errors), updated index + formula sheet | Completed |
+| v1.5 | 2026-09-21 | AI (Codebuff) | Created DSA subject folder with 4 concept notes (Asymptotic Analysis, Arrays, Linked List, Stack) + master index MOC; registered subject in README | Completed |
+| v1.6 | 2026-09-21 | AI (Codebuff) | Renamed Simpson notes to legal filenames (no `/`), fixed all 34 dead wikilinks, added alias coverage | Completed |
 
 ## Recent Activity
 
@@ -127,5 +147,5 @@ If this vault is moved to another AI or shared with others:
 
 ---
 *Generated on 2026-09-19*
-*Last updated: 2026-09-20*
-*Version: v1.4*
+*Last updated: 2026-09-21*
+*Version: v1.6*

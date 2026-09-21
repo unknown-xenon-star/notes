@@ -25,8 +25,8 @@ flowchart TD
     M3 --> QUAD["Newton-Cotes Quadrature"]
     M3 --> QERR["[[Error in Quadrature Formulas – Trapezoidal, Simpson's]]"]
     QUAD --> TRP["[[Trapezoidal Rule]]"]
-    QUAD --> S13["[[Simpson's 1/3 Rule]]"]
-    QUAD --> S38["[[Simpson's 3/8 Rule]]"]
+    QUAD --> S13["[[Simpson's One-Third Rule]]"]
+    QUAD --> S38["[[Simpson's Three-Eighths Rule]]"]
     QUAD --> WDL["[[Weddle's Rule]]"]
 ```
 
@@ -40,8 +40,8 @@ flowchart TD
 ### Newton-Cotes Quadrature (Lecture Topics 22-24)
 *Approximating $\int_a^b f(x)\,dx$ from equally spaced ordinates.*
 - **[[Trapezoidal Rule]]** — Chord-top trapeziums, the "ends once, middles twice" weights, exact for linear functions, composite error $-\frac{(b-a)h^2}{12}f''(\xi)$.
-- **[[Simpson's 1/3 Rule]]** — Parabolic panels (even $n$ required), the 1-4-2-4-…-4-1 weights, exact for cubics, error $-\frac{(b-a)h^4}{180}f^{(4)}(\xi)$.
-- **[[Simpson's 3/8 Rule]]** — Cubic panels ($n$ a multiple of 3), the 1-3-3-1 binomial weights, hybrid strategies for awkward strip counts.
+- **[[Simpson's One-Third Rule]]** — Parabolic panels (even $n$ required), the 1-4-2-4-…-4-1 weights, exact for cubics, error $-\frac{(b-a)h^4}{180}f^{(4)}(\xi)$.
+- **[[Simpson's Three-Eighths Rule]]** — Cubic panels ($n$ a multiple of 3), the 1-3-3-1 binomial weights, hybrid strategies for awkward strip counts.
 - **[[Weddle's Rule]]** — Sixth-difference panels ($n$ a multiple of 6), 1-5-1-6-1-5-1 pattern, exact through degree 5.
 
 ### Quadrature Error Analysis (Lecture Topic 25)

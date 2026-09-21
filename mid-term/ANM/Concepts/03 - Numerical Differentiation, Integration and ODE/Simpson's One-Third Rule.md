@@ -10,6 +10,7 @@ aliases:
   - "Simpson 1/3 Rule"
   - "Simpson's Rule"
   - "Composite Simpson's 1/3 Rule"
+  - "Simpson's 1/3 Rule"
 status: completed
 ---
 
@@ -32,7 +33,7 @@ $$h = \frac{b - a}{n}, \qquad \boxed{n \text{ must be EVEN}}$$
 with nodes $x_0 = a, \dots, x_n = b$ and ordinates $y_i = f(x_i)$.
 
 > [!WARNING] ⚠️ The Even-Strips Requirement
-> Each application of the rule consumes **two strips (three points)** — a parabola needs 3 points. So the total number of strips $n$ must be **even** (equivalently, the number of ordinates $n+1$ must be **odd**). If your table has an even number of ordinates, pair Simpson's 1/3 with the [[Trapezoidal Rule]] or [[Simpson's 3/8 Rule]] for the leftover strip(s).
+> Each application of the rule consumes **two strips (three points)** — a parabola needs 3 points. So the total number of strips $n$ must be **even** (equivalently, the number of ordinates $n+1$ must be **odd**). If your table has an even number of ordinates, pair Simpson's 1/3 with the [[Trapezoidal Rule]] or [[Simpson's Three-Eighths Rule]] for the leftover strip(s).
 
 ---
 
@@ -123,7 +124,7 @@ $$\text{Error} = |0.785398 - 0.785398| \approx \mathbf{0.000000}$$
 > [!SUCCESS]- Step-by-Step Solution
 > 1. The rule fits **one parabola per two strips**; a parabola is determined by exactly **3 points**.
 > 2. With $n$ odd, after pairing strips ($2 + 2 + \dots$) there is **one unpaired strip** left over — only 2 points, which define a line, not a parabola.
-> 3. Remedies: integrate the last strip with the Trapezoidal Rule (losing accuracy there), or restructure with [[Simpson's 3/8 Rule]] (which consumes strips in threes).
+> 3. Remedies: integrate the last strip with the Trapezoidal Rule (losing accuracy there), or restructure with [[Simpson's Three-Eighths Rule]] (which consumes strips in threes).
 
 ---
 
@@ -177,7 +178,7 @@ print(f"Exact (pi/4):      {exact:.6f}")   # Output: 0.785398
 
 ## 🔗 Related Notes
 - [[Trapezoidal Rule]] — The $O(h^2)$ baseline this rule improves upon
-- [[Simpson's 3/8 Rule]] — Cubic-panel variant for $n$ divisible by 3
+- [[Simpson's Three-Eighths Rule]] — Cubic-panel variant for $n$ divisible by 3
 - [[Weddle's Rule]] — Sixth-difference rule for $n$ a multiple of 6
 - [[Error in Quadrature Formulas – Trapezoidal, Simpson's]] — Exact error terms and comparison
 - [[Newton Forward and Backward Difference Interpolation]] — Source of the finite-difference derivation

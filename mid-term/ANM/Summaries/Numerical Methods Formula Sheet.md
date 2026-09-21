@@ -84,8 +84,8 @@ $$|a_{ii}| > \sum_{j=1, j \neq i}^{n} |a_{ij}| \quad \forall i = 1, 2, \dots, n$
 | Rule | Composite Formula | Strips $n$ | Composite Error | Precision |
 | :--- | :--- | :---: | :--- | :---: |
 | **[[Trapezoidal Rule]]** | $\frac{h}{2}\big[y_0 + 2(y_1+\dots+y_{n-1}) + y_n\big]$ | any | $-\frac{(b-a)h^2}{12}f''(\xi)$ | 1 |
-| **[[Simpson's 1/3 Rule]]** | $\frac{h}{3}\big[(y_0+y_n) + 4\Sigma y_{\text{odd}} + 2\Sigma y_{\text{even}}\big]$ | even | $-\frac{(b-a)h^4}{180}f^{(4)}(\xi)$ | 3 |
-| **[[Simpson's 3/8 Rule]]** | $\frac{3h}{8}\big[(y_0+y_n) + 3\Sigma y_{\text{non-boundary}} + 2\Sigma y_{3,6,\dots}\big]$ | $\equiv 0 \pmod 3$ | $-\frac{(b-a)h^4}{80}f^{(4)}(\xi)$ | 3 |
+| **[[Simpson's One-Third Rule]]** | $\frac{h}{3}\big[(y_0+y_n) + 4\Sigma y_{\text{odd}} + 2\Sigma y_{\text{even}}\big]$ | even | $-\frac{(b-a)h^4}{180}f^{(4)}(\xi)$ | 3 |
+| **[[Simpson's Three-Eighths Rule]]** | $\frac{3h}{8}\big[(y_0+y_n) + 3\Sigma y_{\text{non-boundary}} + 2\Sigma y_{3,6,\dots}\big]$ | $\equiv 0 \pmod 3$ | $-\frac{(b-a)h^4}{80}f^{(4)}(\xi)$ | 3 |
 | **[[Weddle's Rule]]** | $\frac{3h}{10}\big[y_0+5y_1+y_2+6y_3+y_4+5y_5+y_6\big]$ per panel | $\equiv 0 \pmod 6$ | $-\frac{(b-a)h^6}{840}f^{(6)}(\xi)$ | 5 |
 
 > [!TIP] 💡 Quadrature Exam Takeaways
@@ -119,4 +119,4 @@ $$|a_{ii}| > \sum_{j=1, j \neq i}^{n} |a_{ij}| \quad \forall i = 1, 2, \dots, n$
 - [[Graeffe's Root-Squaring Method]] | [[Lin-Bairstow Method]]
 - [[Lagrange Interpolation]] | [[Lagrange Inverse Interpolation]] | [[Cubic Spline Interpolation]]
 - [[Newton Forward and Backward Difference Interpolation]] | [[Stirling's Formula]] | [[Bessel's Formula]]
-- [[Trapezoidal Rule]] | [[Simpson's 1/3 Rule]] | [[Simpson's 3/8 Rule]] | [[Weddle's Rule]] | [[Error in Quadrature Formulas – Trapezoidal, Simpson's]]
+- [[Trapezoidal Rule]] | [[Simpson's One-Third Rule]] | [[Simpson's Three-Eighths Rule]] | [[Weddle's Rule]] | [[Error in Quadrature Formulas – Trapezoidal, Simpson's]]

@@ -17,7 +17,7 @@ status: completed
 
 > [!NOTE] 💡 The Big Picture Intuition
 > Suppose you must find the area of an irregular pond with no formula available. You can't integrate — you only have depth measurements at equally spaced points across it. The **Trapezoidal Rule** says: *connect the measured depths with straight lines and sum up the areas of the resulting trapeziums.*
-> It's the "connect-the-dots with rulers" approach to integration — simple, robust, and the baseline against which all fancier quadrature rules ([[Simpson's 1/3 Rule]], [[Simpson's 3/8 Rule]], [[Weddle's Rule]]) are judged. Every curved top is flattened into a chord, which slightly **under-estimates** convex (cap-up $\cup$) regions and **over-estimates** concave (cap-down $\cap$) regions.
+> It's the "connect-the-dots with rulers" approach to integration — simple, robust, and the baseline against which all fancier quadrature rules ([[Simpson's One-Third Rule]], [[Simpson's Three-Eighths Rule]], [[Weddle's Rule]]) are judged. Every curved top is flattened into a chord, which slightly **under-estimates** convex (cap-up $\cup$) regions and **over-estimates** concave (cap-down $\cap$) regions.
 
 ---
 
@@ -174,8 +174,8 @@ print(f"Error:             {abs(exact - approx):.6f}")  # Output: 0.001157
 ---
 
 ## 🔗 Related Notes
-- [[Simpson's 1/3 Rule]] — Parabolic upgrade, error $O(h^4)$
-- [[Simpson's 3/8 Rule]] — Cubic-strip alternative for $n$ divisible by 3
+- [[Simpson's One-Third Rule]] — Parabolic upgrade, error $O(h^4)$
+- [[Simpson's Three-Eighths Rule]] — Cubic-strip alternative for $n$ divisible by 3
 - [[Weddle's Rule]] — Sixth-difference rule for $n$ a multiple of 6
 - [[Error in Quadrature Formulas – Trapezoidal, Simpson's]] — Full error analysis of all quadrature rules
 - [[Newton Forward and Backward Difference Interpolation]] — Where the rule's derivation comes from

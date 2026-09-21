@@ -51,6 +51,20 @@ All notes, concept deep-dives, formula sheets, and PDF course materials for ANM 
   - _[[Bessel's Formula]]_ — Midpoint-centred central differences for targets between two central nodes
   - _[[Cubic Spline Interpolation]]_ — Piecewise cubics, $C^2$ continuity, Natural/Clamped/Not-a-Knot
 
+### 2. 🌲 Data Structures & Algorithms (DSA)
+All DSA notes live under the **`DSA/`** directory.
+
+- 🏠 **[[00 - Data Structures and Algorithms Index|DSA Master Study Hub & MOC]]** — Syllabus roadmap, concept graph, and module overview.
+- 🧠 **DSA Concept Notes (`DSA/Concepts/`)** — 4 concept notes:
+
+  #### 📌 Foundations
+  - _[[Asymptotic Analysis]]_ — $O$/$\Omega$/$\Theta$ bounds, complexity ladder, loop analysis, space complexity
+
+  #### 📌 Linear Data Structures
+  - _[[Arrays]]_ — Contiguous memory, $O(1)$ address arithmetic, shifting tax, dynamic doubling
+  - _[[Linked List]]_ — Singly, doubly, and circular flavours; 3-pointer reversal; array-vs-list trade-offs
+  - _[[Stack]]_ — LIFO, array/linked implementations, postfix evaluation, balanced parentheses
+
 ---
 
 ## 🔑 Vault Standards & Pedagogical Architecture

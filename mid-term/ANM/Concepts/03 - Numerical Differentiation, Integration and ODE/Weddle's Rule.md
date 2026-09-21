@@ -16,7 +16,7 @@ status: completed
 # 🎯 Weddle's Rule (Numerical Integration)
 
 > [!NOTE] 💡 The Big Picture Intuition
-> Every rule so far has been "keep the first few terms of Newton's differences": the [[Trapezoidal Rule]] keeps $\Delta$, [[Simpson's 1/3 Rule]] keeps up to $\Delta^2$, [[Simpson's 3/8 Rule]] up to $\Delta^3$. **Weddle's Rule** goes further: integrate the 6th-degree interpolating polynomial, then apply a dash of numerical cleverness — **replace the stubborn coefficient $\frac{41}{140}$ by the clean $\frac{3}{10}$** (they differ by only $\approx 2.4\%$, but the swap makes the formula memorable while keeping the same high order of accuracy!).
+> Every rule so far has been "keep the first few terms of Newton's differences": the [[Trapezoidal Rule]] keeps $\Delta$, [[Simpson's One-Third Rule]] keeps up to $\Delta^2$, [[Simpson's Three-Eighths Rule]] up to $\Delta^3$. **Weddle's Rule** goes further: integrate the 6th-degree interpolating polynomial, then apply a dash of numerical cleverness — **replace the stubborn coefficient $\frac{41}{140}$ by the clean $\frac{3}{10}$** (they differ by only $\approx 2.4\%$, but the swap makes the formula memorable while keeping the same high order of accuracy!).
 > The result: a sixth-order rule with the weight pattern **1–5–1–6–1–5–1** over **six strips (seven points)** — the most accurate classic rule in the syllabus, exact for every polynomial up to degree 5.
 
 ---
@@ -101,13 +101,13 @@ $$I \approx 0.3 \times 6.509524 = \mathbf{1.952857}$$
 
 **Step 4: Compare with exact**
 $$\int_0^6 \frac{dx}{1+x} = \ln 7 \approx 1.945910 \implies \text{Error} \approx \mathbf{0.006947}$$
-Compare [[Simpson's 3/8 Rule]] on $[0,3]$: relative accuracy is far superior here for the same strip width.
+Compare [[Simpson's Three-Eighths Rule]] on $[0,3]$: relative accuracy is far superior here for the same strip width.
 
 ### Worked Example 2: Weddle vs Simpson on the Same Data ($n = 6$)
 > [!EXAMPLE] Problem
 > Evaluate $\displaystyle\int_0^1 \frac{dx}{1 + x^2}$ using Weddle's Rule with $n = 6$ strips, and compare with the Simpson's 1/3 result.
 
-**Step 1:** $h = \frac{1}{6}$; ordinates (as in the [[Simpson's 1/3 Rule]] table):
+**Step 1:** $h = \frac{1}{6}$; ordinates (as in the [[Simpson's One-Third Rule]] table):
 $y_0 = 1.000000,\ y_1 = 0.972973,\ y_2 = 0.900000,\ y_3 = 0.800000,\ y_4 = 0.692308,\ y_5 = 0.590164,\ y_6 = 0.500000$
 
 **Step 2: Apply the single-panel Weddle formula**
@@ -141,8 +141,8 @@ $$\text{Exact} = \frac{\pi}{4} = 0.785398 \implies \text{Error} \approx \mathbf{
 > A table gives 13 equally spaced ordinates ($n = 12$ strips). Which composite rule(s) can be applied directly, and which is most accurate?
 
 > [!SUCCESS]- Step-by-Step Solution
-> 1. $n = 12$ is even → composite [[Simpson's 1/3 Rule]] applies (6 panels) ✅
-> 2. $n = 12$ is a multiple of 3 → composite [[Simpson's 3/8 Rule]] applies (4 panels) ✅
+> 1. $n = 12$ is even → composite [[Simpson's One-Third Rule]] applies (6 panels) ✅
+> 2. $n = 12$ is a multiple of 3 → composite [[Simpson's Three-Eighths Rule]] applies (4 panels) ✅
 > 3. $n = 12$ is a multiple of 6 → composite **Weddle's Rule** applies (2 panels) ✅ — the most accurate choice ($O(h^6)$).
 > 4. If $n$ were, say, 10: Simpson 1/3 alone works (even); Weddle would need a hybrid split.
 
@@ -188,7 +188,7 @@ print(f"Exact (pi/4):     {exact:.6f}")    # Output: 0.785398
 
 ## 🔗 Related Notes
 - [[Trapezoidal Rule]] — $O(h^2)$ baseline
-- [[Simpson's 1/3 Rule]] — $O(h^4)$, even strips
-- [[Simpson's 3/8 Rule]] — $O(h^4)$, strips in multiples of 3
+- [[Simpson's One-Third Rule]] — $O(h^4)$, even strips
+- [[Simpson's Three-Eighths Rule]] — $O(h^4)$, strips in multiples of 3
 - [[Error in Quadrature Formulas – Trapezoidal, Simpson's]] — The full accuracy ladder across all rules
 - [[Newton Forward and Backward Difference Interpolation]] — Finite-difference machinery behind the derivation

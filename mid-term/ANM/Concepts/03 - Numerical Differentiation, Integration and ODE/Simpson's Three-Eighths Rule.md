@@ -10,6 +10,7 @@ aliases:
   - "Simpson 3/8 Rule"
   - "Second Simpson Rule"
   - "Composite Simpson's 3/8 Rule"
+  - "Simpson's 3/8 Rule"
 status: completed
 ---
 
@@ -100,7 +101,7 @@ $$\text{Error} = |1.386294 - 1.406250| \approx \mathbf{0.019956}$$
 > [!EXAMPLE] Problem
 > Evaluate $\displaystyle\int_0^1 \frac{dx}{1 + x^2}$ using the composite Simpson's 3/8 Rule with $n = 6$ strips.
 
-**Step 1:** $h = \frac{1}{6} \approx 0.166667$; ordinates as in the [[Simpson's 1/3 Rule]] table:
+**Step 1:** $h = \frac{1}{6} \approx 0.166667$; ordinates as in the [[Simpson's One-Third Rule]] table:
 $y_0 = 1.000000,\ y_1 = 0.972973,\ y_2 = 0.900000,\ y_3 = 0.800000,\ y_4 = 0.692308,\ y_5 = 0.590164,\ y_6 = 0.500000$
 
 **Step 2: Identify weights** — ends $y_0, y_6$: coefficient $1$; panel boundary $y_3$: coefficient $2$; all other interiors $y_1, y_2, y_4, y_5$: coefficient $3$.
@@ -180,7 +181,7 @@ print(f"Exact (pi/4):      {exact:.6f}")   # Output: 0.785398
 ---
 
 ## 🔗 Related Notes
-- [[Simpson's 1/3 Rule]] — The even-strip sibling with identical accuracy order
+- [[Simpson's One-Third Rule]] — The even-strip sibling with identical accuracy order
 - [[Trapezoidal Rule]] — $O(h^2)$ baseline
 - [[Weddle's Rule]] — Sixth-difference rule for $n$ a multiple of 6
 - [[Error in Quadrature Formulas – Trapezoidal, Simpson's]] — Exact error terms and comparison table
