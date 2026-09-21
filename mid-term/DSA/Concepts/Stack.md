@@ -163,72 +163,94 @@ Ends empty with no mismatches → **Balanced ✅**. Failure modes: closer with w
 
 ---
 
-## 6. Python Implementation
+## 6. C++ Implementation
 
-```python
-class ArrayStack:
-    """Array-backed stack: top = end of the Python list."""
-    def __init__(self):
-        self._items = []
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
 
-    def push(self, x):            # O(1) amortized
-        self._items.append(x)
+template <typename T>
+class ArrayStack {
+    vector<T> items;                    // top = end of the vector
+public:
+    void push(const T& x) { items.push_back(x); }        // O(1) amortized
 
-    def pop(self):                # O(1)
-        if not self._items:
-            raise IndexError("Stack underflow: pop from empty stack")
-        return self._items.pop()
+    T pop() {                                            // O(1)
+        if (items.empty())
+            throw underflow_error("Stack underflow: pop from empty stack");
+        T top = items.back();
+        items.pop_back();
+        return top;
+    }
 
-    def peek(self):               # O(1)
-        if not self._items:
-            raise IndexError("Stack underflow: peek at empty stack")
-        return self._items[-1]
+    T peek() const {                                     // O(1)
+        if (items.empty())
+            throw underflow_error("Stack underflow: peek at empty stack");
+        return items.back();
+    }
 
-    def is_empty(self):
-        return not self._items
+    bool isEmpty() const { return items.empty(); }
+    int  size()    const { return (int)items.size(); }
+};
 
-    def __len__(self):
-        return len(self._items)
+bool isOperand(const string& t) {
+    size_t start = (t[0] == '+' || t[0] == '-') ? 1 : 0;
+    return start < t.size() &&
+           t.find_first_not_of("0123456789", start) == string::npos;
+}
 
+double evaluatePostfix(const string& expr) {   // O(n)
+    ArrayStack<double> st;
+    istringstream in(expr);
+    string token;
+    while (in >> token) {
+        if (isOperand(token)) {
+            st.push(stod(token));             // operand
+        } else {                              // operator
+            double right = st.pop();          // FIRST pop = right operand!
+            double left  = st.pop();
+            switch (token[0]) {
+                case '+': st.push(left + right); break;
+                case '-': st.push(left - right); break;
+                case '*': st.push(left * right); break;
+                case '/': st.push(left / right); break;
+            }
+        }
+    }
+    return st.pop();
+}
 
-def evaluate_postfix(expr: str) -> float:
-    """Evaluate a space-separated postfix expression. O(n)."""
-    st = ArrayStack()
-    for token in expr.split():
-        if token.lstrip("+-").isdigit():          # operand
-            st.push(float(token))
-        else:                                     # operator
-            right = st.pop()                      # FIRST pop = right operand!
-            left = st.pop()
-            st.push({"+": left + right, "-": left - right,
-                     "*": left * right, "/": left / right}[token])
-    return st.pop()
+bool isBalanced(const string& s) {             // O(n) time, O(n) space
+    unordered_map<char, char> pairs = {{')', '('}, {']', '['}, {'}', '{'}};
+    ArrayStack<char> st;
+    for (char ch : s) {
+        if (ch == '(' || ch == '[' || ch == '{') {
+            st.push(ch);
+        } else if (ch == ')' || ch == ']' || ch == '}') {
+            if (st.isEmpty() || st.pop() != pairs[ch]) return false;
+        }
+    }
+    return st.isEmpty();       // leftover openers => unbalanced
+}
 
+// Demos -------------------------------------------------------------
+int main() {
+    ArrayStack<int> s;
+    for (int x : {10, 20, 30}) s.push(x);
+    cout << s.pop() << " " << s.peek() << " " << s.size() << "\n";  // 30 20 2
 
-def is_balanced(s: str) -> bool:
-    """Check {}, [], () nesting. O(n) time, O(n) space."""
-    pairs, st = {")": "(", "]": "[", "}": "{"}, ArrayStack()
-    for ch in s:
-        if ch in "([{":
-            st.push(ch)
-        elif ch in ")]}":
-            if st.is_empty() or st.pop() != pairs[ch]:
-                return False
-    return st.is_empty()                # leftover openers => unbalanced
+    cout << evaluatePostfix("5 6 2 + * 12 4 / -") << "\n";          // 37
 
-
-# Demos -------------------------------------------------------------
-s = ArrayStack()
-for x in (10, 20, 30): s.push(x)
-print(s.pop(), s.peek(), len(s))        # 30 20 2
-print(evaluate_postfix("5 6 2 + * 12 4 / -"))   # 37.0
-print(is_balanced("{[()]}"), is_balanced("(]")) # True False
+    cout << boolalpha << isBalanced("{[()]}") << " "
+         << isBalanced("(]") << "\n";                              // true false
+    return 0;
+}
 ```
 
 ---
 
 ## 7. Related Notes
+- [[Infix, Postfix and Prefix Notations]] — the deep dive behind Section 3's conversion and evaluation applications.
 - [[Linked List]] — the second stack implementation: head-of-list as top.
 - [[Arrays]] — the array-backed stack; top at the cheap (end) side.
 - [[Asymptotic Analysis]] — why every stack operation is labelled $O(1)$.
-

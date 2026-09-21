@@ -102,11 +102,12 @@ Convention: complexity quoted without qualification = **worst case**.
 ### Worked Example 1: Counting Operations Exactly
 > [!EXAMPLE] Problem
 > Find the time complexity of:
-> ```python
-> total = 0                  # 1 operation
-> for i in range(n):         # loop control: n+1 checks
->     total += i             # body: n operations
-> print(total)               # 1 operation
+> ```cpp
+> long long total = 0;             // 1 operation
+> for (int i = 0; i < n; ++i) {    // loop control: n+1 checks
+>     total += i;                  // body: n operations
+> }
+> cout << total << "\n";           // 1 operation
 > ```
 
 **Step 1: Count every operation** → $f(n) = 1 + (n+1) + n + 1 = 2n + 3$
@@ -118,10 +119,11 @@ $$\boxed{f(n) = 2n + 3 \implies O(n)}$$
 ### Worked Example 2: The Doubling Loop → Logarithmic
 > [!EXAMPLE] Problem
 > Find the complexity of:
-> ```python
-> i = 1
-> while i < n:
->     i *= 2
+> ```cpp
+> int i = 1;
+> while (i < n) {
+>     i *= 2;
+> }
 > ```
 
 **Step 1**: After $k$ iterations, $i = 2^k$.
@@ -133,10 +135,11 @@ $$\boxed{O(\log n)} \quad \text{(input size doubles} \Rightarrow \text{just one 
 ### Worked Example 3: The Triangle Loop → Quadratic (Gauss Sum)
 > [!EXAMPLE] Problem
 > Find the complexity of:
-> ```python
-> for i in range(n):
->     for j in range(i):     # inner runs i times, not n times!
->         print(i, j)
+> ```cpp
+> for (int i = 0; i < n; ++i) {
+>     for (int j = 0; j < i; ++j)     // inner runs i times, not n times!
+>         cout << i << " " << j << "\n";
+> }
 > ```
 
 **Step 1**: Total inner iterations $= 0 + 1 + 2 + \dots + (n-1)$.
@@ -177,22 +180,31 @@ Same asymptotic logic, applied to **auxiliary memory** (extra memory beyond the 
 
 ---
 
-## 9. Python Implementation
+## 9. C++ Implementation
 
-```python
-import math
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
 
-def linear_search_ops(n: int) -> int:
-    """Worst-case comparisons for linear search: O(n)."""
-    return n
+long long linearSearchOps(long long n) {
+    return n;                                             // worst case: O(n)
+}
 
-def binary_search_ops(n: int) -> int:
-    """Worst-case comparisons for binary search: O(log n)."""
-    return math.ceil(math.log2(n)) if n > 0 else 0
+long long binarySearchOps(long long n) {
+    return n > 0 ? (long long)ceil(log2((double)n)) : 0;  // worst case: O(log n)
+}
 
-print(f"{'n':>15} | {'linear O(n)':>15} | {'binary O(log n)':>15}")
-for n in (10, 1_000, 1_000_000, 1_000_000_000):
-    print(f"{n:>15,} | {linear_search_ops(n):>15,} | {binary_search_ops(n):>15}")
+int main() {
+    cout << setw(15) << "n" << " | "
+         << setw(15) << "linear O(n)" << " | "
+         << setw(15) << "binary O(log n)" << "\n";
+    for (long long n : {10LL, 1000LL, 1000000LL, 1000000000LL}) {
+        cout << setw(15) << n << " | "
+             << setw(15) << linearSearchOps(n) << " | "
+             << setw(15) << binarySearchOps(n) << "\n";
+    }
+    return 0;
+}
 ```
 
 **Output** — watch binary search barely move while linear search explodes:
@@ -200,14 +212,16 @@ for n in (10, 1_000, 1_000_000, 1_000_000_000):
 ```
               n |     linear O(n) | binary O(log n)
              10 |              10 |               4
-          1,000 |           1,000 |              10
-      1,000,000 |       1,000,000 |              20
-  1,000,000,000 |   1,000,000,000 |              30
+           1000 |            1000 |              10
+        1000000 |         1000000 |              20
+     1000000000 |      1000000000 |              30
 ```
 
 ---
 
 ## 10. Related Notes
+- [[Algorithm Evaluation]] — the bigger judging framework: apriori vs apostiori, correctness, optimality.
+- [[Introduction to Data Structures]] — the subject this notation measures end to end.
 - [[Arrays]] — the $O(1)$ random access that address arithmetic buys you.
 - [[Linked List]] — trades $O(1)$ access for $O(1)$ insertion at the front.
 - [[Stack]] — all core operations run in $O(1)$; recursion depth = stack depth.

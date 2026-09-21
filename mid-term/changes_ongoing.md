@@ -71,6 +71,28 @@ This file tracks all changes made to the Mid-Term Knowledge Vault (ANM). It serv
 - Created master index `DSA/00 - Data Structures and Algorithms Index.md` with Mermaid knowledge graph + syllabus modules.
 - Updated `README.md` to register DSA as subject module 2.
 
+### v1.7 - DSA Notes Converted to C++ (2026-09-21)
+- Standing rule added to `.agents/rules/pedagogy_and_latex.md`: **all code in DSA notes must be C/C++ only**.
+- Converted all 8 Python code blocks across the 4 DSA notes to C++ (`#include <bits/stdc++.h>`):
+  - Asymptotic Analysis: loop-analysis snippets (`` ```cpp `` callouts) + complexity-table program.
+  - Arrays: vector capacity-doubling watcher, manual shift-insert, two-pointer reverse.
+  - Linked List: full SinglyLinkedList class (insertHead/insertTail/remove/search/reverse) + circular Josephus round-robin; section-4 pseudocode rewritten as real C++.
+  - Stack: template ArrayStack class, postfix evaluator, balanced-parentheses checker.
+- Every program compiled with `g++ -std=c++17 -Wall` and executed; documented outputs corrected to actual results (Josephus order is C A E B with survivor D — the old Python comment was wrong).
+
+### v1.8 - DSA Syllabus Expansion: 7 New Concept Notes (2026-09-21)
+- Created 7 new notes in `DSA/Concepts/` (all C++, all compiled & run):
+  - **Introduction to Data Structures** (definitions, D-A-F triplet, classification tree, ADT vs implementation, operation-cost table)
+  - **Algorithm Evaluation** (algorithm properties, criteria, apriori vs apostiori, design techniques, O(1)-vs-O(n) timing demo)
+  - **Multi-dimensional Arrays** (row/column-major, 2D/3D address formulas, lower-bound variants, cache benchmark)
+  - **Sparse Matrices** (sparsity threshold 3(t+1) < mn, triplet representation, merge-add, verified against hand example)
+  - **Structure** (heterogeneous records, padding, struct-vs-array, offsetof verification)
+  - **Pointers** (&/*, pointer arithmetic = array formula, new/delete, dangling pointers, trace examples)
+  - **Infix, Postfix and Prefix Notations** (precedence table, shunting-yard traces, infix→prefix via reverse, postfix/prefix evaluation)
+- Skipped as already-present: Arrays, Stack (representation + operations + applications), per user's "skip if present" instruction.
+- Updated `DSA/00 - Data Structures and Algorithms Index.md`: Mermaid graph now shows all 11 notes with construction/trade-off edges; Foundations module expanded to 5 notes, Linear module to 6 notes.
+- Added cross-links: Arrays ↔ Multi-dimensional Arrays/Sparse Matrices/Structure, Stack → Notations, Linked List → Pointers/Structure, Asymptotic Analysis → Algorithm Evaluation/Intro.
+
 ### v1.6 - Simpson Filename & Wikilink Repair (2026-09-21)
 - Renamed two notes whose filenames contained `/` (an illegal path character, which made every wikilink pointing at them dead):
   - `Simpson's 1-3 Rule.md` → `Simpson's One-Third Rule.md`
@@ -90,6 +112,8 @@ This file tracks all changes made to the Mid-Term Knowledge Vault (ANM). It serv
 | v1.4 | 2026-09-20 | AI (Codebuff) | Added 6 integration/quadrature notes (Lagrange inverse interpolation, Trapezoidal, Simpson 1/3 & 3/8, Weddle, quadrature errors), updated index + formula sheet | Completed |
 | v1.5 | 2026-09-21 | AI (Codebuff) | Created DSA subject folder with 4 concept notes (Asymptotic Analysis, Arrays, Linked List, Stack) + master index MOC; registered subject in README | Completed |
 | v1.6 | 2026-09-21 | AI (Codebuff) | Renamed Simpson notes to legal filenames (no `/`), fixed all 34 dead wikilinks, added alias coverage | Completed |
+| v1.7 | 2026-09-21 | AI (Codebuff) | Converted all DSA Python code to C++, added C/C++-only rule, compile-verified every snippet | Completed |
+| v1.8 | 2026-09-21 | AI (Codebuff) | Added 7 DSA concept notes (Intro DS, Algorithm Evaluation, Multi-dim Arrays, Sparse Matrices, Structure, Pointers, Notations), updated index + cross-links | Completed |
 
 ## Recent Activity
 
@@ -148,4 +172,4 @@ If this vault is moved to another AI or shared with others:
 ---
 *Generated on 2026-09-19*
 *Last updated: 2026-09-21*
-*Version: v1.6*
+*Version: v1.8*

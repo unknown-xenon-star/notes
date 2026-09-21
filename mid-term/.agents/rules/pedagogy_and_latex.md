@@ -1,5 +1,11 @@
 # Rules for Obsidian Mid-Term Notes: LaTeX, Human-First Pedagogy & Examples
 
+## 0. Code Language Policy
+- **All code in DSA (Data Structures & Algorithms) notes must be written in C++ (or C) only.**
+- Use standard C++ conventions: `#include <bits/stdc++.h>`, `using namespace std;`, pointer-based structs for linked structures, `std::vector` for dynamic arrays.
+- Never use Python, Java, or JavaScript in DSA notes.
+- Verify code compiles (`g++ -std=c++17`) and runs correctly before including it in a note.
+
 ## 1. LaTeX Notation Everywhere
 - Format every single mathematical symbol, variable, coefficient, index, equation, bounds, error, and formula using LaTeX.
 - Inline math: `$x_k$`, `$f'(x)$`, `$\alpha \in [a, b]$`, `$\epsilon = 10^{-4}$`.

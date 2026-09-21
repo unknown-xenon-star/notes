@@ -82,7 +82,7 @@ Shift ←: [ 10 | 30 | 40 ]                (30→1, 40→2, n -= 1) ✅
 
 ## 4. Static vs Dynamic Arrays
 
-| Property | Static Array | Dynamic Array (Python `list`, C++ `vector`) |
+| Property | Static Array | Dynamic Array (C++ `vector`, Python `list`) |
 | :--- | :--- | :--- |
 | Capacity | Fixed at creation | Grows automatically |
 | Size stored | Reserved upfront | Doubles when full: 1 → 2 → 4 → 8 → … |
@@ -158,44 +158,76 @@ $$\text{addr}(A[3][5]) = 1000 + (3 \times 10 + 5) \times 4 = 1000 + 35 \times 4 
 
 ---
 
-## 8. Python Implementation
+## 8. C++ Implementation
 
-```python
-import sys
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
 
-# 1) Watch a dynamic array double its capacity as it grows
-def show_dynamic_growth():
-    arr, prev = [], 0
-    for i in range(30):
-        arr.append(i)                      # amortized O(1)
-        size = sys.getsizeof(arr)
-        if size != prev:                   # a resize just happened!
-            print(f"len={len(arr):2d}  allocated={size} bytes")
-            prev = size
+// 1) Watch a dynamic array double its capacity as it grows
+void showDynamicGrowth() {
+    vector<int> arr;
+    int prevCap = 0;
+    for (int i = 0; i < 30; ++i) {
+        arr.push_back(i);                        // amortized O(1)
+        if ((int)arr.capacity() != prevCap) {    // a resize just happened!
+            cout << "len=" << setw(2) << arr.size()
+                 << "  allocated=" << arr.capacity() << " ints\n";
+            prevCap = arr.capacity();
+        }
+    }
+}
 
-# 2) Manual shifting insert (what list.insert does under the hood) — O(n)
-def insert_at(arr, index, value):
-    arr.append(None)                       # make room
-    for i in range(len(arr) - 1, index, -1):
-        arr[i] = arr[i - 1]                # shift right
-    arr[index] = value
-    return arr
+// 2) Manual shifting insert (what vector::insert does under the hood) — O(n)
+vector<int> insertAt(vector<int> arr, int index, int value) {
+    arr.push_back(0);                            // make room
+    for (int i = (int)arr.size() - 1; i > index; --i)
+        arr[i] = arr[i - 1];                     // shift right
+    arr[index] = value;
+    return arr;
+}
 
-# 3) In-place two-pointer reverse — O(n) time, O(1) extra space
-def reverse_in_place(arr):
-    left, right = 0, len(arr) - 1
-    while left < right:
-        arr[left], arr[right] = arr[right], arr[left]
-        left, right = left + 1, right - 1
-    return arr
+// 3) In-place two-pointer reverse — O(n) time, O(1) extra space
+void reverseInPlace(vector<int>& arr) {
+    int left = 0, right = (int)arr.size() - 1;
+    while (left < right)
+        swap(arr[left++], arr[right--]);
+}
 
-print(insert_at([10, 20, 30, 40], 1, 15))   # [10, 15, 20, 30, 40]
-print(reverse_in_place([1, 2, 3, 4, 5]))    # [5, 4, 3, 2, 1]
+int main() {
+    showDynamicGrowth();
+
+    vector<int> a = insertAt({10, 20, 30, 40}, 1, 15);
+    vector<int> b = {1, 2, 3, 4, 5};
+    reverseInPlace(b);
+
+    for (int x : a) cout << x << ' ';            // 10 15 20 30 40
+    cout << '\n';
+    for (int x : b) cout << x << ' ';            // 5 4 3 2 1
+    cout << '\n';
+    return 0;
+}
+```
+
+**Sample output** (GCC/libstdc++ — capacities are implementation-defined, but the doubling pattern 1→2→4→8→16→32 is typical):
+
+```
+len= 1  allocated=1 ints
+len= 2  allocated=2 ints
+len= 3  allocated=4 ints
+len= 5  allocated=8 ints
+len= 9  allocated=16 ints
+len=17  allocated=32 ints
+10 15 20 30 40
+5 4 3 2 1
 ```
 
 ---
 
 ## 9. Related Notes
+- [[Multi-dimensional Arrays]] — the 2D/3D sequel: row-major formulas for grids in flat memory.
+- [[Sparse Matrices]] — when most 2D cells are zero, store only the non-zeros as triplets.
+- [[Structure]] — heterogeneous records: the other way to bundle data besides arrays.
 - [[Asymptotic Analysis]] — where the $O(1)$ / $O(n)$ / $O(\log n)$ labels come from.
 - [[Linked List]] — the scattered-memory alternative: fast inserts, slow access.
 - [[Stack]] — usually built on top of an array; pushes at the cheap (end) side.
