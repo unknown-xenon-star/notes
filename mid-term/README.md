@@ -67,6 +67,29 @@ All DSA notes live under the **`DSA/`** directory.
 
 ---
 
+### 3. ⚡ Electromagnetic Fields (EMF)
+All EMF notes live under the **`EMF/`** directory.
+
+- 🏠 **[[00 - Electromagnetic Fields Index|EMF Master Study Hub & MOC]]** — Syllabus roadmap, concept graph, and module overview.
+- 🧠 **EMF Concept Notes (`EMF/Concepts/`)** — 11 concept notes:
+
+  #### 📌 Vector Analysis Toolkit
+  - _[[Introduction to 3D Coordinate Systems]]_ — Cartesian/cylindrical/spherical systems, $h$-factors, $d\mathbf{l}$ and $dv$ elements
+  - _[[Review of Vectors]]_ — dot & cross products, projections, distance vectors
+  - _[[Transformation of Vectors]]_ — same vector, new components; the four conversion tables
+  - _[[Concepts of Gradient]]_ — steepest ascent, directional derivative, $\mathbf{E} = -\nabla V$
+  - _[[Concepts of Divergence]]_ — sources/sinks, divergence theorem, $\nabla\cdot\mathbf{D} = \rho_v$
+  - _[[Concepts of Curl]]_ — circulation, paddle wheel, Stokes' theorem, $\nabla\times\mathbf{E} = 0$
+
+  #### 📌 Electrostatics
+  - _[[Various Charge Distribution, Coulomb's Law]]_ — four charge distributions, Coulomb's law, superposition, the slicing recipe
+  - _[[Determination of Static Electric Fields]]_ — field concept, three strategies, ring/disc/dipole fields
+  - _[[Application of Gauss Law, Maxwell's First Equation]]_ — flux, $\mathbf{D} = \varepsilon\mathbf{E}$, symmetry recipe, point form
+  - _[[Electric Potential]]_ — scalar terrain, path independence, $W = q\Delta V$
+  - _[[Boundary Relations of Electric Fields]]_ — pillbox & loop conditions, field refraction, conductor rules
+
+---
+
 ## 🔑 Vault Standards & Pedagogical Architecture
 1. **Human-First Conceptual Language**: Plain-English analogies, Feynman-technique explanations, and intuitive mental models.
 2. **Standardized $\LaTeX$ Mathematics**: High-clarity equations, derivations, matrices, and step-by-step formulas.

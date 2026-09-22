@@ -93,6 +93,16 @@ This file tracks all changes made to the Mid-Term Knowledge Vault (ANM). It serv
 - Updated `DSA/00 - Data Structures and Algorithms Index.md`: Mermaid graph now shows all 11 notes with construction/trade-off edges; Foundations module expanded to 5 notes, Linear module to 6 notes.
 - Added cross-links: Arrays ↔ Multi-dimensional Arrays/Sparse Matrices/Structure, Stack → Notations, Linked List → Pointers/Structure, Asymptotic Analysis → Algorithm Evaluation/Intro.
 
+### v1.9 - EMF Subject Module (2026-09-22)
+- Created new subject folder `EMF/` with `Concepts/` subfolder, mirroring the ANM/DSA structure.
+- Added 11 concept notes in `EMF/Concepts/`:
+  - **Vector Analysis Toolkit (6)**: Introduction to 3D Coordinate Systems (h-factors, dl/dv elements), Review of Vectors (dot/cross, projections, distance vectors), Transformation of Vectors (4 conversion tables, point-dependence), Concepts of Gradient (directional derivative, E = -grad V), Concepts of Divergence (divergence theorem, source/sink intuition), Concepts of Curl (paddle wheel, Stokes, zero-curl electrostatics).
+  - **Electrostatics (5)**: Various Charge Distribution Coulomb's Law (4 distributions, slicing recipe, prototype fields), Determination of Static Electric Fields (3-strategy toolbox, ring/disc/dipole), Application of Gauss Law Maxwell's First Equation (flux, symmetry recipe, point form), Electric Potential (scalar terrain, path independence, work), Boundary Relations of Electric Fields (pillbox/loop conditions, refraction law).
+- All worked-example numbers verified computationally (Coulomb forces, line/sheet/sphere fields, dipole 35.95 V/m axis vs 17.98 V/m equatorial, boundary refraction tan ratios = eps ratio, Stokes/divergence-theorem checks).
+- Created master index `EMF/00 - Electromagnetic Fields Index.md` with Mermaid knowledge graph + 2 syllabus modules.
+- Updated `README.md` to register EMF as subject module 3.
+- Verified vault integrity: 115 EMF wikilinks resolve (1 intentional planned-sheet placeholder, same convention as DSA index), all frontmatter valid.
+
 ### v1.6 - Simpson Filename & Wikilink Repair (2026-09-21)
 - Renamed two notes whose filenames contained `/` (an illegal path character, which made every wikilink pointing at them dead):
   - `Simpson's 1-3 Rule.md` → `Simpson's One-Third Rule.md`
@@ -114,6 +124,7 @@ This file tracks all changes made to the Mid-Term Knowledge Vault (ANM). It serv
 | v1.6 | 2026-09-21 | AI (Codebuff) | Renamed Simpson notes to legal filenames (no `/`), fixed all 34 dead wikilinks, added alias coverage | Completed |
 | v1.7 | 2026-09-21 | AI (Codebuff) | Converted all DSA Python code to C++, added C/C++-only rule, compile-verified every snippet | Completed |
 | v1.8 | 2026-09-21 | AI (Codebuff) | Added 7 DSA concept notes (Intro DS, Algorithm Evaluation, Multi-dim Arrays, Sparse Matrices, Structure, Pointers, Notations), updated index + cross-links | Completed |
+| v1.9 | 2026-09-22 | AI (Codebuff) | Created EMF subject: 11 concept notes (6 vector-analysis + 5 electrostatics) + master index MOC; registered in README; verified all example numbers | Completed |
 
 ## Recent Activity
 
@@ -171,5 +182,5 @@ If this vault is moved to another AI or shared with others:
 
 ---
 *Generated on 2026-09-19*
-*Last updated: 2026-09-21*
-*Version: v1.8*
+*Last updated: 2026-09-22*
+*Version: v1.9*
