@@ -103,6 +103,21 @@ This file tracks all changes made to the Mid-Term Knowledge Vault (ANM). It serv
 - Updated `README.md` to register EMF as subject module 3.
 - Verified vault integrity: 115 EMF wikilinks resolve (1 intentional planned-sheet placeholder, same convention as DSA index), all frontmatter valid.
 
+### v2.0 - EM Subject Module: Transformers (2026-09-23)
+- Created new subject folder `EM/` (now with `Concepts/` populated), mirroring the ANM/DSA/EMF structure.
+- Exam brief captured from class discussion and encoded as a **priority dashboard** in the index: 🔴 Connections → Parallel Operation → Autotransformer; 🟡 Scott, Star/Delta numericals, equivalent circuit of parallel transformers, LVDT (importance TBD); ❌ detailed losses, eddy-current derivations, extensive 1-phase phasors.
+- Added 7 concept notes in `EM/Concepts/` (all worked examples verified computationally):
+  - **Review of Single-Phase Transformer**: ratios, EMF equation (4.44 origin), referred equivalent circuit, regulation, loss *logic only* per scope; K-definition trap callout.
+  - **Types of Transformer Connections** (highest priority): phasor-subtraction master skill, Yy/Dd/Dy/Yd table with ±30° shifts and vector-group clock notation, V-V open-delta 57.7%/86.6% utility, Yy third-harmonic problem, Yd 9.53:1 worked example, Dy1 30° derivation.
+  - **Parallel Operation of Transformers**: mandatory (ratio, polarity) vs desirable (equal pu Z, same X/R) conditions with one-line logic; equivalent circuit; $I_c = (E_1-E_2)/(Z_1+Z_2)$ = 50 A worked example; pu/common-base load division with 107.1% overload example.
+  - **Autotransformer**: conducted vs transformed kVA split, copper saving $1-K$, kVA boosting $S_{auto} = S_{2w}/(1-K)$ (5→10 kVA example), 250/200 V full worked example (8+2 kVA check), no-isolation reasoning.
+  - **Scott Connection**: main + teaser, 50% centre tap, 86.6% teaser turns from triangle altitude, 90° inherent shift, 11 kV/400 V numerical (9526 V teaser, 73-turn secondary, 1732-turn teaser).
+  - **Harmonic Reduction in Phase Voltages**: triplen = zero-sequence (3×120° = 360°), delta harmonic cemetery, Yy clean-line/dirty-phase result, 3-limb air-path suppression, rms phase-voltage numerical (√(230²+30²) = 231.9 V).
+  - **LVDT (Linear Variable Differential Transformer)**: series opposition, null + 180° direction trick, sensitivity numerical (60 mV → 5 mm); importance flagged as *TBD vs class/lab material*.
+- Created master index `EM/00 - Electrical Machines Index.md`: priority-dashboard Mermaid graph, knowledge graph with dependency edges, syllabus modules, teacher's preparation-strategy callout ($\boxed{\text{Connections} \to \text{Phasors} \to \text{Parallel} \to \text{Auto} \to \text{Scott}}$).
+- Updated `README.md`: registered EM as subject module 4 with all 9 notes listed.
+- Verified vault integrity: all EM wikilinks resolve (1 intentional planned-sheet placeholder `EM Formula Sheet`, same convention as DSA/EMF indexes); frontmatter valid on all new files.
+
 ### v1.6 - Simpson Filename & Wikilink Repair (2026-09-21)
 - Renamed two notes whose filenames contained `/` (an illegal path character, which made every wikilink pointing at them dead):
   - `Simpson's 1-3 Rule.md` → `Simpson's One-Third Rule.md`
@@ -125,8 +140,15 @@ This file tracks all changes made to the Mid-Term Knowledge Vault (ANM). It serv
 | v1.7 | 2026-09-21 | AI (Codebuff) | Converted all DSA Python code to C++, added C/C++-only rule, compile-verified every snippet | Completed |
 | v1.8 | 2026-09-21 | AI (Codebuff) | Added 7 DSA concept notes (Intro DS, Algorithm Evaluation, Multi-dim Arrays, Sparse Matrices, Structure, Pointers, Notations), updated index + cross-links | Completed |
 | v1.9 | 2026-09-22 | AI (Codebuff) | Created EMF subject: 11 concept notes (6 vector-analysis + 5 electrostatics) + master index MOC; registered in README; verified all example numbers | Completed |
+| v2.0 | 2026-09-23 | AI (Codebuff) | Created EM subject per exam brief: 7 transformer notes (Connections, Parallel Operation, Autotransformer, Scott, Single-Phase Review, Harmonics, LVDT) + master index with exam-priority dashboard; registered in README | Completed |
 
 ## Recent Activity
+
+### 2026-09-23
+- Created EM (Electrical Machines) subject module: 7 new transformer-focused concept notes in `EM/Concepts/`, completing the 2 pre-existing 3-phase notes (9 total)
+- Created `EM/00 - Electrical Machines Index.md` MOC with exam-priority dashboard (🔴/🟡/❌), Mermaid roadmap + knowledge graph, and teacher's preparation-strategy callout
+- Registered EM as subject module 4 in `README.md`
+- Verified all worked-example numbers computationally and confirmed all wikilinks resolve
 
 ### 2026-09-19
 - Created `changes_ongoing.md` (this file)
@@ -182,5 +204,5 @@ If this vault is moved to another AI or shared with others:
 
 ---
 *Generated on 2026-09-19*
-*Last updated: 2026-09-22*
-*Version: v1.9*
+*Last updated: 2026-09-23*
+*Version: v2.0*

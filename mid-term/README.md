@@ -90,6 +90,29 @@ All EMF notes live under the **`EMF/`** directory.
 
 ---
 
+### 4. ⚙️ Electrical Machines (EM)
+All EM notes live under the **`EM/`** directory.
+
+- 🏠 **[[00 - Electrical Machines Index|EM Master Study Hub & MOC]]** — Exam-priority dashboard, concept graph, and module overview.
+- 🧠 **EM Concept Notes (`EM/Concepts/`)** — 9 concept notes, transformer-centric per the exam brief:
+
+  #### 📌 Foundations
+  - _[[Review of Single-Phase Transformer]]_ — ratios, EMF equation, equivalent circuit, regulation, loss logic
+  - _[[Three-Phase Systems with Balanced and Unbalanced Load]]_ — star/delta $\sqrt3$ relations, neutral displacement, unbalance traps
+
+  #### 📌 Transformers — Core Exam Zone
+  - _[[Types of Transformer Connections]]_ — Yy/Dd/Dy/Yd, phasor diagrams, ±30° shifts, applications *(🔴 highest priority)*
+  - _[[Harmonic Reduction in Phase Voltages]]_ — triplen logic, delta harmonic cemetery, 3-limb suppression
+  - _[[Parallel Operation of Transformers]]_ — conditions, circulating current, pu load sharing *(🔴 high priority)*
+  - _[[Autotransformer]]_ — copper saving $1-K$, kVA boosting, no-isolation reasoning *(🔴 high priority)*
+  - _[[Scott Connection]]_ — main + teaser, 86.6% teaser turns, 3φ↔2φ
+
+  #### 📌 Measurement & Instrumentation
+  - _[[Measurement of Power and Power Factor in Three-Phase Circuits]]_ — Blondel, two-wattmeter, pf from readings
+  - _[[LVDT (Linear Variable Differential Transformer)]]_ — differential position sensing *(weight TBD vs class/lab)*
+
+---
+
 ## 🔑 Vault Standards & Pedagogical Architecture
 1. **Human-First Conceptual Language**: Plain-English analogies, Feynman-technique explanations, and intuitive mental models.
 2. **Standardized $\LaTeX$ Mathematics**: High-clarity equations, derivations, matrices, and step-by-step formulas.
